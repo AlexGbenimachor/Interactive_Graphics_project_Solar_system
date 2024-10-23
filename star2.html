@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title> star  </title>
+<script src="three.min.js"></script>
+<style>
+body{
+background:black;
+
+}
+</style>
+
+</head>
+<body>
+<script>
+var scene, camera, renderer, container;
+var W, H;
+
+W = parseInt(window.innerWidth);
+H = parseInt(window.innerHeight);
+container = document.createElement('div');
+document.body.appendChild(container);
+
+camera = new THREE.PerspectiveCamera(45,W/H, 1,1000000);
+camera.position.z = 6300;
+scene = new THREE.Scene();
+
+
+
+
+var starparticles = new THREE.Geometry();
+var starMaterial = new THREE.PointsMaterial({color:0xffffff, 
+size:20, sizeAttenuation:false
+});
+
+var stars;
+
+for( var i=0; i < 5000; i++){
+     var x= Math.random *2-1,
+         y= Math.random * 2-1,
+         z= Math.random * 2-1,
+
+         particle = new THREE.Vector3(x, y, z); 
+
+}
+   //starparticles.multiplyScalar(5000);
+
+ starparticles.vertices.push(particle);
+
+
+var star= new THREE.Points(starparticles, starMaterial);
+
+scene.add(star);
+
+   renderer = new THREE.WebGLRenderer();
+   renderer.setSize( window.innerWidth, window.innerHeight );
+   document.body.appendChild( renderer.domElement );
+
+animate();
+
+
+function animate(){
+
+requestAnimationFrame(animate);
+camera.lookAt(scene.position);
+
+renderer.render(scene, camera);
+
+
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

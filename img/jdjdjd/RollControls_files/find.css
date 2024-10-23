@@ -1,0 +1,22 @@
+span.match {
+  background-color:yellow;
+  font-weight:bold; 
+}
+
+div.keyword-box {
+  height:30px;
+  margin:5px;
+  position:fixed;
+  right:0;
+  top:0;
+  width:200px;
+}
+
+div.keyword-box input {
+  border: 1px solid gray;
+}
+
+div.keyword-box button {
+  border: 1px solid gray;
+  background-color:white;
+}
