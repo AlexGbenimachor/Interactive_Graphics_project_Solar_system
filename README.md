@@ -1,1 +1,0 @@
-# Interactive_Graphics_project_Solar_system
